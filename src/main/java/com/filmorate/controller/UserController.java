@@ -1,10 +1,11 @@
 package com.filmorate.controller;
-
-import com.filmorate.exception.NotFoundException;
 import com.filmorate.exception.ValidationException;
 import com.filmorate.model.User;
+import com.filmorate.storage.film.FilmStorage;
+import com.filmorate.storage.user.UserStorage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -13,27 +14,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Collection;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    private static final Logger log = LoggerFactory.getLogger(UserController.class);
-    private long currentId = 0;
-    private final Map<Long, User> users = new HashMap<>();
+    private final UserStorage  userStorage;
+    private static final Logger log = LoggerFactory.getLogger(UserController.class);;
+@Autowired
+    public UserController(UserStorage userStorage) {
+        this.userStorage = userStorage;
+    }
 
     @GetMapping
-    public List<User> findAll() {
-        return new ArrayList<>(users.values());
+    public Collection<User> findAll() {
+        return new ArrayList<>(userStorage.findAll());
     }
 
     @PostMapping
     public User create(@RequestBody User user) {
         validate(user);
-        user.setId(++currentId);
-        users.put(user.getId(), user);
+        userStorage.create(user);
         log.info("Created user with id={}", user.getId());
         return user;
     }
@@ -41,10 +42,7 @@ public class UserController {
     @PutMapping
     public User update(@RequestBody User user) {
         validate(user);
-        if (users.get(user.getId()) == null) {
-            throw new NotFoundException("Пользователь с ID" + user.getId() + "не найден");
-        }
-        users.put(user.getId(), user);
+        userStorage.update(user);
         log.info("Updated user with id={}", user.getId());
         return user;
     }

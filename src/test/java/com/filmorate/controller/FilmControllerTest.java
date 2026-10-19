@@ -3,6 +3,8 @@ package com.filmorate.controller;
 import com.filmorate.exception.NotFoundException;
 import com.filmorate.exception.ValidationException;
 import com.filmorate.model.Film;
+import com.filmorate.storage.film.FilmStorage;
+import com.filmorate.storage.film.InMemoryFilmStorage;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -12,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class FilmControllerTest {
-    private FilmController controller = new FilmController();
+    private FilmStorage filmStorage = new InMemoryFilmStorage();
+    private FilmController controller = new FilmController(filmStorage );
 
     private Film validFilm() {
         Film film = new Film();

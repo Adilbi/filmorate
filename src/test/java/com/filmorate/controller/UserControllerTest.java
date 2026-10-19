@@ -3,6 +3,8 @@ package com.filmorate.controller;
 import com.filmorate.exception.NotFoundException;
 import com.filmorate.exception.ValidationException;
 import com.filmorate.model.User;
+import com.filmorate.storage.user.InMemoryUserStorage;
+import com.filmorate.storage.user.UserStorage;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -12,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class UserControllerTest {
-    private UserController controller = new UserController();
+    private UserStorage userStorage = new InMemoryUserStorage();
+    private UserController controller = new UserController(userStorage);
 
     private User validUser() {
         User user = new User();
