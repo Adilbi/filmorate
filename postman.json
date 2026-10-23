@@ -1,10 +1,10 @@
 {
     "info": {
-        "_postman_id": "0aad53da-5bc9-4a7d-9606-033da01c9027",
-        "name": "controllers-films-users",
+        "_postman_id": "c48e59d5-4de8-4757-a8c4-c13e763036df",
+        "name": "add-friends-likes",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
         "_exporter_id": "23073145",
-        "_collection_link": "https://universal-shadow-295426.postman.co/workspace/My-Workspace~4200f6aa-0504-44b1-8a1d-707d0dcbd5ce/collection/23073145-0aad53da-5bc9-4a7d-9606-033da01c9027?action=share&source=collection_link&creator=23073145"
+        "_collection_link": "https://universal-shadow-295426.postman.co/workspace/My-Workspace~4200f6aa-0504-44b1-8a1d-707d0dcbd5ce/collection/23073145-c48e59d5-4de8-4757-a8c4-c13e763036df?action=share&source=collection_link&creator=23073145"
     },
     "item": [
         {
@@ -109,7 +109,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n  \"login\": \"dolore\",\n  \"name\": \"Nick Name\",\n  \"email\": \"mail@mail.com\",\n  \"birthday\": \"1946-08-20\"\n}",
+                            "raw": "{\n  \"login\": \"dolore\",\n  \"name\": \"Nick Name\",\n  \"email\": \"mail@mail.ru\",\n  \"birthday\": \"1946-08-20\"\n}",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -135,8 +135,8 @@
                             "listen": "test",
                             "script": {
                                 "exec": [
-                                    "pm.test(\"Status code is 500 or 400\", function () {\r",
-                                    "     pm.expect(pm.response.code).to.be.oneOf([500,400]);\r",
+                                    "pm.test(\"Status code is 400\", function () {\r",
+                                    "     pm.expect(pm.response.code).to.be.equal(400);\r",
                                     "});\r",
                                     "pm.test(\"Has error response\", function () {\r",
                                     "    pm.response.to.be.withBody;\r",
@@ -144,7 +144,8 @@
                                     "});\r",
                                     ""
                                 ],
-                                "type": "text/javascript"
+                                "type": "text/javascript",
+                                "packages": {}
                             }
                         }
                     ],
@@ -162,7 +163,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n  \"login\": \"dolore ullamco\",\n  \"email\": \"mail@mail.com\",\n  \"birthday\": \"2446-08-20\"\n}",
+                            "raw": "{\n  \"login\": \"dolore ullamco\",\n  \"email\": \"example@mail.org\",\n  \"birthday\": \"2446-08-20\"\n}",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -188,15 +189,16 @@
                             "listen": "test",
                             "script": {
                                 "exec": [
-                                    "pm.test(\"Status code is 500 or 400\", function () {\r",
-                                    "     pm.expect(pm.response.code).to.be.oneOf([500,400]);\r",
+                                    "pm.test(\"Status code is 400\", function () {\r",
+                                    "     pm.expect(pm.response.code).to.be.equal(400);\r",
                                     "});\r",
                                     "pm.test(\"Has error response\", function () {\r",
                                     "    pm.response.to.be.withBody;\r",
                                     "    pm.response.to.be.json;\r",
                                     "});"
                                 ],
-                                "type": "text/javascript"
+                                "type": "text/javascript",
+                                "packages": {}
                             }
                         }
                     ],
@@ -214,7 +216,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n  \"login\": \"dolore ullamco\",\n  \"name\": \"\",\n  \"email\": \"mail.com\",\n  \"birthday\": \"1980-08-20\"\n}",
+                            "raw": "{\n  \"login\": \"dolore ullamco\",\n  \"name\": \"\",\n  \"email\": \"mail.ru\",\n  \"birthday\": \"1980-08-20\"\n}",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -240,15 +242,16 @@
                             "listen": "test",
                             "script": {
                                 "exec": [
-                                    "pm.test(\"Status code is 500 or 400\", function () {\r",
-                                    "     pm.expect(pm.response.code).to.be.oneOf([500,400]);\r",
+                                    "pm.test(\"Status code is 400\", function () {\r",
+                                    "     pm.expect(pm.response.code).to.be.equal(400);\r",
                                     "});\r",
                                     "pm.test(\"Has error response\", function () {\r",
                                     "    pm.response.to.be.withBody;\r",
                                     "    pm.response.to.be.json;\r",
                                     "});"
                                 ],
-                                "type": "text/javascript"
+                                "type": "text/javascript",
+                                "packages": {}
                             }
                         }
                     ],
@@ -266,7 +269,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n  \"login\": \"dolore\",\n  \"name\": \"\",\n  \"email\": \"test@mail.com\",\n  \"birthday\": \"2446-08-20\"\n}",
+                            "raw": "{\n  \"login\": \"dolore\",\n  \"name\": \"\",\n  \"email\": \"test@mail.ru\",\n  \"birthday\": \"2446-08-20\"\n}",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -309,7 +312,7 @@
                                     "pm.test(\"Test user 'email' field\", function () {\r",
                                     "    var jsonData = pm.response.json();\r",
                                     "    pm.expect(jsonData).to.have.property('email');\r",
-                                    "    pm.expect(jsonData.email, '\"email\" must be \"mail@mail.com\"').to.eql('mail@mail.com');\r",
+                                    "    pm.expect(jsonData.email, '\"email\" must be \"example@mail.org\"').to.eql('example@mail.org');\r",
                                     "});\r",
                                     "pm.test(\"Test user 'name' field\", function () {\r",
                                     "    var jsonData = pm.response.json();\r",
@@ -352,7 +355,7 @@
                                     "            \"login\": \"doloreUpdate\",\r",
                                     "            \"name\": \"est adipisicing\",\r",
                                     "            \"id\": user.id,\r",
-                                    "            \"email\": \"mail@mail.com\",\r",
+                                    "            \"email\": \"example@mail.org\",\r",
                                     "            \"birthday\": \"1976-09-20\"\r",
                                     "            }),\r",
                                     "        options: { raw: { language: 'json' } }\r",
@@ -419,15 +422,16 @@
                             "listen": "test",
                             "script": {
                                 "exec": [
-                                    "pm.test(\"Status code is 500\", function () {\r",
-                                    "    pm.expect(pm.response.code).to.be.oneOf([500, 404]);\r",
+                                    "pm.test(\"Status code is 404\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.equal(404);\r",
                                     "});\r",
                                     "pm.test(\"Has error response\", function () {\r",
                                     "    pm.response.to.be.withBody;\r",
                                     "    pm.response.to.be.json;\r",
                                     "});"
                                 ],
-                                "type": "text/javascript"
+                                "type": "text/javascript",
+                                "packages": {}
                             }
                         },
                         {
@@ -452,7 +456,7 @@
                                     "            \"login\": \"doloreUpdate\",\r",
                                     "            \"name\": \"est adipisicing\",\r",
                                     "            \"id\": user.id+1,\r",
-                                    "            \"email\": \"mail@mail.com\",\r",
+                                    "            \"email\": \"example@mail.org\",\r",
                                     "            \"birthday\": \"1976-09-20\"\r",
                                     "            }),\r",
                                     "        options: { raw: { language: 'json' } }\r",
@@ -475,7 +479,8 @@
                                     "    100 \r",
                                     ");"
                                 ],
-                                "type": "text/javascript"
+                                "type": "text/javascript",
+                                "packages": {}
                             }
                         }
                     ],
@@ -493,7 +498,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n  \"login\": \"doloreUpdate\",\n  \"name\": \"est adipisicing\",\n  \"id\": 9999,\n  \"email\": \"mail@mail.com\",\n  \"birthday\": \"1976-09-20\"\n}",
+                            "raw": "{\n  \"login\": \"doloreUpdate\",\n  \"name\": \"est adipisicing\",\n  \"id\": 9999,\n  \"email\": \"example@mail.org\",\n  \"birthday\": \"1976-09-20\"\n}",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -556,53 +561,91 @@
                         }
                     },
                     "response": []
-                },
+                }
+            ]
+        },
+        {
+            "name": "friends",
+            "item": [
                 {
-                    "name": "Create user with empty name",
+                    "name": "Friend add",
                     "event": [
                         {
                             "listen": "test",
                             "script": {
                                 "exec": [
-                                    "pm.test(\"Status code is 200 or 201\", function () {\r",
-                                    "    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+                                    "const user1_id = pm.collectionVariables.get(\"id\");\r",
+                                    "const user2_id = pm.collectionVariables.get(\"friend_id\");\r",
+                                    "\r",
+                                    "pm.test(\"Status code is 200\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200,204]);\r",
                                     "});\r",
-                                    "pm.test(\"Has user create response\", function () {\r",
-                                    "    pm.response.to.be.withBody;\r",
-                                    "    pm.response.to.be.json;\r",
+                                    "\r",
+                                    "pm.sendRequest({\r",
+                                    "    url : \"http://localhost:8080/users/\" + user1_id + '/friends',\r",
+                                    "    method : \"GET\",\r",
+                                    "    header: { \"Content-Type\": \"application/json\" }\r",
+                                    "}, (error, response) => {\r",
+                                    "    pm.test(\"user1 has user2 friend\", function () {\r",
+                                    "        pm.expect(response.json()[0].id).to.be.equal(user2_id);\r",
+                                    "    });\r",
                                     "});\r",
-                                    "pm.test(\"Test user 'id' field\", function () {\r",
-                                    "    var jsonData = pm.response.json();\r",
-                                    "    pm.expect(jsonData).to.have.property('id');\r",
-                                    "});\r",
-                                    "pm.test(\"Test user 'email' field\", function () {\r",
-                                    "    var jsonData = pm.response.json();\r",
-                                    "    pm.expect(jsonData).to.have.property('email');\r",
-                                    "    pm.expect(jsonData.email, '\"email\" must be \"friend@common.com\"').to.eql('friend@common.com');\r",
-                                    "});\r",
-                                    "pm.test(\"Test user 'name' field\", function () {\r",
-                                    "    var jsonData = pm.response.json();\r",
-                                    "    pm.expect(jsonData).to.have.property('name');\r",
-                                    "    pm.expect(jsonData.name, '\"name\" must be \"common\"').to.eql('common');\r",
-                                    "});\r",
-                                    "pm.test(\"Test user 'login' field\", function () {\r",
-                                    "    var jsonData = pm.response.json();\r",
-                                    "    pm.expect(jsonData).to.have.property('login');\r",
-                                    "    pm.expect(jsonData.login, '\"login\" field must be \"common\"').to.eql('common');    \r",
-                                    "});\r",
-                                    "pm.test(\"Test user 'birthday' field\", function () {\r",
-                                    "    var jsonData = pm.response.json();\r",
-                                    "    pm.expect(jsonData).to.have.property('birthday');\r",
-                                    "    pm.expect(jsonData.birthday, '\"birthday\" field must be \"2000-08-20\"').to.eql('2000-08-20');\r",
+                                    "\r",
+                                    "pm.sendRequest({\r",
+                                    "    url : \"http://localhost:8080/users/\" + user2_id + '/friends',\r",
+                                    "    method : \"GET\",\r",
+                                    "    header: { \"Content-Type\": \"application/json\" }\r",
+                                    "}, (error, response) => {\r",
+                                    "    pm.test(\"user2 has have user1 friend\", function () {\r",
+                                    "        pm.expect(response.json()[0].id).to.be.equal(user1_id)\r",
+                                    "    });\r",
                                     "});\r",
                                     ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user1, user2;\r",
+                                    "    try {\r",
+                                    "        user1 = await api.addUser(rnd.getUser());\r",
+                                    "        user2 = await api.addUser(rnd.getUser());\r",
+                                    "        pm.collectionVariables.set(\"id\", user1.id);\r",
+                                    "        pm.collectionVariables.set(\"friend_id\", user2.id);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
                                 ],
                                 "type": "text/javascript"
                             }
                         }
                     ],
                     "request": {
-                        "method": "POST",
+                        "method": "PUT",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -615,7 +658,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n  \"login\": \"common\",\n  \"email\": \"friend@common.com\",\n  \"birthday\": \"2000-08-20\"\n}",
+                            "raw": "",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -623,12 +666,841 @@
                             }
                         },
                         "url": {
-                            "raw": "{{baseUrl}}/users",
+                            "raw": "{{baseUrl}}/users/{{id}}/friends/{{friend_id}}",
                             "host": [
                                 "{{baseUrl}}"
                             ],
                             "path": [
-                                "users"
+                                "users",
+                                "{{id}}",
+                                "friends",
+                                "{{friend_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Friend add unknown id",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 404\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.equal(404);\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.test(\"Has error response\", function () {\r",
+                                    "    pm.response.to.be.withBody;\r",
+                                    "    pm.response.to.be.json;\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user1, user2;\r",
+                                    "    try {\r",
+                                    "        user1 = await api.addUser(rnd.getUser());\r",
+                                    "        user2 = await api.addUser(rnd.getUser());\r",
+                                    "        pm.collectionVariables.set(\"id\", user1.id);\r",
+                                    "        pm.collectionVariables.set(\"friend_id\", user2.id+1);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/users/{{id}}/friends/{{friend_id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "{{id}}",
+                                "friends",
+                                "{{friend_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Friend get",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const user_friends = pm.collectionVariables.get(\"user_friends\");\r",
+                                    "\r",
+                                    "pm.test(\"Status code is 200\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200,204]);\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.test(\"initially user1 should have 0 friends\", function () {\r",
+                                    "    pm.expect(user_friends.length).to.be.equal(0);\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.test(\"finally user1 should have 1 friend\", function () {\r",
+                                    "    pm.expect(pm.response.json().length).to.be.equal(1);\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user1, user2, user1_friends;\r",
+                                    "    try {\r",
+                                    "        user1 = await api.addUser(rnd.getUser());\r",
+                                    "        user2 = await api.addUser(rnd.getUser());\r",
+                                    "        user1_friends = await api.getFriends(user1.id);\r",
+                                    "        await api.addFriend(user1.id, user2.id);\r",
+                                    "        pm.collectionVariables.set(\"id\", user1.id);\r",
+                                    "        pm.collectionVariables.set(\"user_friends\", user1_friends);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/users/{{id}}/friends",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "{{id}}",
+                                "friends"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Friend get unknown id",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 404\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.equal(404);\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.test(\"Has error response\", function () {\r",
+                                    "    pm.response.to.be.withBody;\r",
+                                    "    pm.response.to.be.json;\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user;\r",
+                                    "    try {\r",
+                                    "        user = await api.addUser(rnd.getUser());\r",
+                                    "        pm.collectionVariables.set(\"id\", user.id+1);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/users/{{id}}/friends",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "{{id}}",
+                                "friends"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Friend remove",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const user1_id = pm.collectionVariables.get(\"id\");\r",
+                                    "const user2_id = pm.collectionVariables.get(\"friend_id\");\r",
+                                    "\r",
+                                    "pm.test(\"Status code is 200\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200,204]);\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.sendRequest({\r",
+                                    "    url : \"http://localhost:8080/users/\" + user1_id + '/friends',\r",
+                                    "    method : \"GET\",\r",
+                                    "    header: { \"Content-Type\": \"application/json\" }\r",
+                                    "}, (error, response) => {\r",
+                                    "    pm.test(\"user1 should have 0 friends\", function () {\r",
+                                    "        pm.expect(response.json().length).to.be.equal(0);\r",
+                                    "    });\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.sendRequest({\r",
+                                    "    url : \"http://localhost:8080/users/\" + user2_id + '/friends',\r",
+                                    "    method : \"GET\",\r",
+                                    "    header: { \"Content-Type\": \"application/json\" }\r",
+                                    "}, (error, response) => {\r",
+                                    "    pm.test(\"user2 should have 0 friends\", function () {\r",
+                                    "        pm.expect(response.json().length).to.be.equal(0);\r",
+                                    "    });\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user1, user2;\r",
+                                    "    try {\r",
+                                    "        user1 = await api.addUser(rnd.getUser());\r",
+                                    "        user2 = await api.addUser(rnd.getUser());\r",
+                                    "        await api.addFriend(user1.id, user2.id);\r",
+                                    "        pm.collectionVariables.set(\"id\", user1.id);\r",
+                                    "        pm.collectionVariables.set(\"friend_id\", user2.id);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/users/{{id}}/friends/{{friend_id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "{{id}}",
+                                "friends",
+                                "{{friend_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Not friend remove",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const user1_id = pm.collectionVariables.get(\"id\");\r",
+                                    "const user2_id = pm.collectionVariables.get(\"friend_id\");\r",
+                                    "\r",
+                                    "pm.test(\"Status code is 200\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200,204]);\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.sendRequest({\r",
+                                    "    url : \"http://localhost:8080/users/\" + user1_id + '/friends',\r",
+                                    "    method : \"GET\",\r",
+                                    "    header: { \"Content-Type\": \"application/json\" }\r",
+                                    "}, (error, response) => {\r",
+                                    "    pm.test(\"user1 should have 0 friends\", function () {\r",
+                                    "        pm.expect(response.json().length).to.be.equal(0);\r",
+                                    "    });\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.sendRequest({\r",
+                                    "    url : \"http://localhost:8080/users/\" + user2_id + '/friends',\r",
+                                    "    method : \"GET\",\r",
+                                    "    header: { \"Content-Type\": \"application/json\" }\r",
+                                    "}, (error, response) => {\r",
+                                    "    pm.test(\"user2 should have 0 friends\", function () {\r",
+                                    "        pm.expect(response.json().length).to.be.equal(0);\r",
+                                    "    });\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user1, user2;\r",
+                                    "    try {\r",
+                                    "        user1 = await api.addUser(rnd.getUser());\r",
+                                    "        user2 = await api.addUser(rnd.getUser());\r",
+                                    "        pm.collectionVariables.set(\"id\", user1.id);\r",
+                                    "        pm.collectionVariables.set(\"friend_id\", user2.id);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/users/{{id}}/friends/{{friend_id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "{{id}}",
+                                "friends",
+                                "{{friend_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Friend remove unknown id",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 404\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.equal(404);\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.test(\"Has error response\", function () {\r",
+                                    "    pm.response.to.be.withBody;\r",
+                                    "    pm.response.to.be.json;\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user1, user2;\r",
+                                    "    try {\r",
+                                    "        user1 = await api.addUser(rnd.getUser());\r",
+                                    "        user2 = await api.addUser(rnd.getUser());\r",
+                                    "        await api.addFriend(user1.id, user2.id);\r",
+                                    "        pm.collectionVariables.set(\"id\", user1.id + 4);\r",
+                                    "        pm.collectionVariables.set(\"friend_id\", user2.id);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/users/{{id}}/friends/{{friend_id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "{{id}}",
+                                "friends",
+                                "{{friend_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Friend remove unknown friend id",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 404\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.equal(404);\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.test(\"Has error response\", function () {\r",
+                                    "    pm.response.to.be.withBody;\r",
+                                    "    pm.response.to.be.json;\r",
+                                    "});"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user1, user2;\r",
+                                    "    try {\r",
+                                    "        user1 = await api.addUser(rnd.getUser());\r",
+                                    "        user2 = await api.addUser(rnd.getUser());\r",
+                                    "        await api.addFriend(user1.id, user2.id);\r",
+                                    "        pm.collectionVariables.set(\"id\", user1.id);\r",
+                                    "        pm.collectionVariables.set(\"friend_id\", user2.id+1);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/users/{{id}}/friends/{{friend_id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "{{id}}",
+                                "friends",
+                                "{{friend_id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get common friends",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const user3_id = pm.collectionVariables.get(\"user3_id\");\r",
+                                    "\r",
+                                    "pm.test(\"Status code is 200\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200,204]);\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.test(\"user1 should have 1 common friend with user2\", function () {\r",
+                                    "    pm.expect(pm.response.json().length).to.be.equal(1);\r",
+                                    "    pm.expect(pm.response.json()[0].id).to.be.equal(user3_id);\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user1, user2, user3;\r",
+                                    "    try {\r",
+                                    "        user1 = await api.addUser(rnd.getUser());\r",
+                                    "        user2 = await api.addUser(rnd.getUser());\r",
+                                    "        user3 = await api.addUser(rnd.getUser());\r",
+                                    "        await api.addFriend(user1.id, user3.id);\r",
+                                    "        await api.addFriend(user1.id, user2.id);\r",
+                                    "        await api.addFriend(user2.id, user3.id);\r",
+                                    "        pm.collectionVariables.set(\"id\", user1.id);\r",
+                                    "        pm.collectionVariables.set(\"friend_id\", user2.id);\r",
+                                    "        pm.collectionVariables.set(\"user3_id\", user3.id);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/users/{{id}}/friends/common/{{friend_id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "users",
+                                "{{id}}",
+                                "friends",
+                                "common",
+                                "{{friend_id}}"
                             ]
                         }
                     },
@@ -766,8 +1638,8 @@
                             "listen": "test",
                             "script": {
                                 "exec": [
-                                    "pm.test(\"Status code is 500 or 400\", function () {\r",
-                                    "     pm.expect(pm.response.code).to.be.oneOf([500,400]);\r",
+                                    "pm.test(\"Status code is 400\", function () {\r",
+                                    "     pm.expect(pm.response.code).to.be.equal(400);\r",
                                     "});\r",
                                     "pm.test(\"Has error response\", function () {\r",
                                     "    pm.response.to.be.withBody;\r",
@@ -775,7 +1647,8 @@
                                     "});\r",
                                     ""
                                 ],
-                                "type": "text/javascript"
+                                "type": "text/javascript",
+                                "packages": {}
                             }
                         }
                     ],
@@ -819,8 +1692,8 @@
                             "listen": "test",
                             "script": {
                                 "exec": [
-                                    "pm.test(\"Status code is 500 or 400\", function () {\r",
-                                    "     pm.expect(pm.response.code).to.be.oneOf([500,400]);\r",
+                                    "pm.test(\"Status code is 400\", function () {\r",
+                                    "     pm.expect(pm.response.code).to.be.equal(400);\r",
                                     "});\r",
                                     "pm.test(\"Has error response\", function () {\r",
                                     "    pm.response.to.be.withBody;\r",
@@ -828,7 +1701,8 @@
                                     "});\r",
                                     ""
                                 ],
-                                "type": "text/javascript"
+                                "type": "text/javascript",
+                                "packages": {}
                             }
                         }
                     ],
@@ -872,8 +1746,8 @@
                             "listen": "test",
                             "script": {
                                 "exec": [
-                                    "pm.test(\"Status code is 500 or 400\", function () {\r",
-                                    "     pm.expect(pm.response.code).to.be.oneOf([500,400]);\r",
+                                    "pm.test(\"Status code is 400\", function () {\r",
+                                    "     pm.expect(pm.response.code).to.be.equal(400);\r",
                                     "});\r",
                                     "pm.test(\"Has error response\", function () {\r",
                                     "    pm.response.to.be.withBody;\r",
@@ -881,7 +1755,8 @@
                                     "});\r",
                                     ""
                                 ],
-                                "type": "text/javascript"
+                                "type": "text/javascript",
+                                "packages": {}
                             }
                         }
                     ],
@@ -925,8 +1800,8 @@
                             "listen": "test",
                             "script": {
                                 "exec": [
-                                    "pm.test(\"Status code is 500 or 400\", function () {\r",
-                                    "     pm.expect(pm.response.code).to.be.oneOf([500,400]);\r",
+                                    "pm.test(\"Status code is 400\", function () {\r",
+                                    "     pm.expect(pm.response.code).to.be.equal(400);\r",
                                     "});\r",
                                     "pm.test(\"Has error response\", function () {\r",
                                     "    pm.response.to.be.withBody;\r",
@@ -934,7 +1809,8 @@
                                     "});\r",
                                     ""
                                 ],
-                                "type": "text/javascript"
+                                "type": "text/javascript",
+                                "packages": {}
                             }
                         }
                     ],
@@ -1109,8 +1985,8 @@
                             "listen": "test",
                             "script": {
                                 "exec": [
-                                    "pm.test(\"Status code is 500\", function () {\r",
-                                    "    pm.expect(pm.response.code).to.be.oneOf([500, 404]);\r",
+                                    "pm.test(\"Status code is 404\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.equal(404);\r",
                                     "});\r",
                                     "pm.test(\"Has error response\", function () {\r",
                                     "    pm.response.to.be.withBody;\r",
@@ -1118,7 +1994,8 @@
                                     "});\r",
                                     ""
                                 ],
-                                "type": "text/javascript"
+                                "type": "text/javascript",
+                                "packages": {}
                             }
                         },
                         {
@@ -1167,7 +2044,8 @@
                                     "    100 \r",
                                     ");"
                                 ],
-                                "type": "text/javascript"
+                                "type": "text/javascript",
+                                "packages": {}
                             }
                         }
                     ],
@@ -1248,6 +2126,697 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "Film get Popular",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "const film1_id = pm.collectionVariables.get(\"film1_id\");\r",
+                                    "const film2_id = pm.collectionVariables.get(\"film2_id\");\r",
+                                    "const film3_id = pm.collectionVariables.get(\"film3_id\");\r",
+                                    "\r",
+                                    "pm.test(\"Status code is 200\", function () {\r",
+                                    "    pm.response.to.be.ok;\r",
+                                    "});\r",
+                                    "pm.test(\"Test list popular film response\", function () {\r",
+                                    "    pm.response.to.be.withBody;\r",
+                                    "    pm.response.to.be.json;\r",
+                                    "});\r",
+                                    "\r",
+                                    "const index1 = pm.response.json().findIndex(x => x.id == film1_id);\r",
+                                    "const index2 = pm.response.json().findIndex(x => x.id == film2_id);\r",
+                                    "const index3 = pm.response.json().findIndex(x => x.id == film3_id);\r",
+                                    "\r",
+                                    "pm.test(\"Test films сonsistency\", function () {\r",
+                                    "    pm.expect(index1).to.be.above(index2);\r",
+                                    "    pm.expect(index1).to.be.above(index3);\r",
+                                    "    pm.expect(index3).to.be.above(index2);\r",
+                                    "});\r",
+                                    "\r",
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user1, user2, user3, film1, film2, film3;\r",
+                                    "    try {\r",
+                                    "        user1 = await api.addUser(rnd.getUser());\r",
+                                    "        user2 = await api.addUser(rnd.getUser());\r",
+                                    "        user3 = await api.addUser(rnd.getUser());\r",
+                                    "        film1 = await api.addFilm(rnd.getFilm());\r",
+                                    "        film2 = await api.addFilm(rnd.getFilm());\r",
+                                    "        film3 = await api.addFilm(rnd.getFilm());\r",
+                                    "        await api.addLike(film2.id, user1.id);\r",
+                                    "        await api.addLike(film2.id, user2.id);\r",
+                                    "        await api.addLike(film2.id, user3.id);\r",
+                                    "        await api.addLike(film3.id, user1.id);\r",
+                                    "        await api.addLike(film3.id, user2.id);\r",
+                                    "        await api.addLike(film1.id, user1.id);\r",
+                                    "        pm.collectionVariables.set(\"film1_id\", film1.id);\r",
+                                    "        pm.collectionVariables.set(\"film2_id\", film2.id);\r",
+                                    "        pm.collectionVariables.set(\"film3_id\", film3.id);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/films/popular?count=1000",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "films",
+                                "popular"
+                            ],
+                            "query": [
+                                {
+                                    "key": "count",
+                                    "value": "1000"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "like",
+            "item": [
+                {
+                    "name": "Add like",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200,204]);\r",
+                                    "});\r",
+                                    "\r",
+                                    "pm.sendRequest({\r",
+                                    "    url : \"http://localhost:8080/films/\" + 45,\r",
+                                    "    method : \"GET\",\r",
+                                    "    header: { \"Content-Type\": \"application/json\" }\r",
+                                    "}, (error, response) => {\r",
+                                    "    console.log(response.json())\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user, film;\r",
+                                    "    try {\r",
+                                    "        user = await api.addUser(rnd.getUser());\r",
+                                    "        film = await api.addFilm(rnd.getFilm());\r",
+                                    "        pm.collectionVariables.set(\"id\", user.id);\r",
+                                    "        pm.collectionVariables.set(\"film_id\", film.id);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/films/{{film_id}}/like/{{id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "films",
+                                "{{film_id}}",
+                                "like",
+                                "{{id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add like unknown film",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 404\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.equal(404);\r",
+                                    "});\r",
+                                    "pm.test(\"Has error response\", function () {\r",
+                                    "    pm.response.to.be.withBody;\r",
+                                    "    pm.response.to.be.json;\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user, film;\r",
+                                    "    try {\r",
+                                    "        user = await api.addUser(rnd.getUser());\r",
+                                    "        film = await api.addFilm(rnd.getFilm());\r",
+                                    "        pm.collectionVariables.set(\"id\", user.id);\r",
+                                    "        pm.collectionVariables.set(\"film_id\", film.id+1);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/films/{{film_id}}/like/{{id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "films",
+                                "{{film_id}}",
+                                "like",
+                                "{{id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add like unknown user",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 404\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.equal(404);\r",
+                                    "});\r",
+                                    "pm.test(\"Has error response\", function () {\r",
+                                    "    pm.response.to.be.withBody;\r",
+                                    "    pm.response.to.be.json;\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user, film;\r",
+                                    "    try {\r",
+                                    "        user = await api.addUser(rnd.getUser());\r",
+                                    "        film = await api.addFilm(rnd.getFilm());\r",
+                                    "        pm.collectionVariables.set(\"id\", user.id+1);\r",
+                                    "        pm.collectionVariables.set(\"film_id\", film.id);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/films/{{film_id}}/like/{{id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "films",
+                                "{{film_id}}",
+                                "like",
+                                "{{id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove like",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200,204]);\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user, film;\r",
+                                    "    try {\r",
+                                    "        user = await api.addUser(rnd.getUser());\r",
+                                    "        film = await api.addFilm(rnd.getFilm());\r",
+                                    "        await api.addLike(film.id, user.id);\r",
+                                    "        pm.collectionVariables.set(\"id\", user.id);\r",
+                                    "        pm.collectionVariables.set(\"film_id\", film.id);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/films/{{film_id}}/like/{{id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "films",
+                                "{{film_id}}",
+                                "like",
+                                "{{id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove like unknown film",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 404\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.equal(404);\r",
+                                    "});\r",
+                                    "pm.test(\"Has error response\", function () {\r",
+                                    "    pm.response.to.be.withBody;\r",
+                                    "    pm.response.to.be.json;\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user, film;\r",
+                                    "    try {\r",
+                                    "        user = await api.addUser(rnd.getUser());\r",
+                                    "        film = await api.addFilm(rnd.getFilm());\r",
+                                    "        await api.addLike(film.id, user.id);\r",
+                                    "        pm.collectionVariables.set(\"id\", user.id);\r",
+                                    "        pm.collectionVariables.set(\"film_id\", film.id+1);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/films/{{film_id}}/like/{{id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "films",
+                                "{{film_id}}",
+                                "like",
+                                "{{id}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove like unknown user",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 404\", function () {\r",
+                                    "    pm.expect(pm.response.code).to.be.equal(404);\r",
+                                    "});\r",
+                                    "pm.test(\"Has error response\", function () {\r",
+                                    "    pm.response.to.be.withBody;\r",
+                                    "    pm.response.to.be.json;\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        },
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const main = async () => {\r",
+                                    "    const api = new API(pm);\r",
+                                    "    const rnd = new RandomUtils();\r",
+                                    "\r",
+                                    "    let user, film;\r",
+                                    "    try {\r",
+                                    "        user = await api.addUser(rnd.getUser());\r",
+                                    "        film = await api.addFilm(rnd.getFilm());\r",
+                                    "        await api.addLike(film.id, user.id);\r",
+                                    "        pm.collectionVariables.set(\"id\", user.id+1);\r",
+                                    "        pm.collectionVariables.set(\"film_id\", film.id);\r",
+                                    "    } catch(err) {\r",
+                                    "        console.error(\"Ошибка при подготовке тестовых данных.\", err);\r",
+                                    "    }\r",
+                                    "\r",
+                                    "};\r",
+                                    "\r",
+                                    "const interval = setInterval(() => {}, 1000);\r",
+                                    "\r",
+                                    "setTimeout(async () => \r",
+                                    "    {\r",
+                                    "        try {\r",
+                                    "            await main();\r",
+                                    "        } catch (e) {\r",
+                                    "            console.error(e);\r",
+                                    "        } finally {\r",
+                                    "            clearInterval(interval);\r",
+                                    "        }\r",
+                                    "    },  \r",
+                                    "    100 \r",
+                                    ");"
+                                ],
+                                "type": "text/javascript",
+                                "packages": {}
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "*/*"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/films/{{film_id}}/like/{{id}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "films",
+                                "{{film_id}}",
+                                "like",
+                                "{{id}}"
+                            ]
+                        }
+                    },
+                    "response": []
                 }
             ]
         }
@@ -1273,8 +2842,16 @@
                     "        return this.post(\"/films\", film, \"Ошибка при добавлении нового фильма: \", verbose);",
                     "    }",
                     "",
-                    "    async addCategory(category, verbose=null) {",
-                    "        return this.post(\"/admin/categories\", category, \"Ошибка при добавлении новой категории: \", verbose);",
+                    "    async addFriend(userId, friendId, verbose=null) {",
+                    "        return this.put(\"/users/\" + userId + '/friends/' + friendId, null, \"Ошибка при добавлении нового фильма: \", verbose);",
+                    "    }",
+                    "",
+                    "    async addLike(filmId, userId, verbose=null) {",
+                    "        return this.put(\"/films/\" + filmId + '/like/' + userId, null, \"Ошибка при добавлении лайка на фильм: \", verbose);",
+                    "    }",
+                    "",
+                    "    async getFriends(userId, verbose=null) {",
+                    "        return this.get('/users/' + userId + '/friends', null, \"Ошибка при поиске друзей по id пользователя\", verbose);",
                     "    }",
                     "",
                     "    async post(path, body, errorText = \"Ошибка при выполнении post-запроса: \", verbose=null) {",
@@ -1288,6 +2865,11 @@
                     "    async get(path, body = null, errorText = \"Ошибка при выполнении get-запроса: \", verbose=null) {",
                     "        return this.sendRequest(\"GET\", path, body, errorText, verbose);",
                     "    }",
+                    "",
+                    "    async put(path, body = null, errorText = \"Ошибка при выполнении put-запроса: \", verbose=null) {",
+                    "        return this.sendRequest(\"PUT\", path, body, errorText, verbose);",
+                    "    }",
+                    "",
                     "    async sendRequest(method, path, body=null, errorText = \"Ошибка при выполнении запроса: \", verbose=null) {",
                     "        return new Promise((resolve, reject) => {",
                     "            verbose = verbose == null ? this._verbose : verbose;",
@@ -1385,6 +2967,42 @@
             "key": "baseUrl",
             "value": "http://localhost:8080",
             "type": "string"
+        },
+        {
+            "key": "id",
+            "value": "0"
+        },
+        {
+            "key": "friend_id",
+            "value": "0"
+        },
+        {
+            "key": "user_friends",
+            "value": ""
+        },
+        {
+            "key": "is",
+            "value": ""
+        },
+        {
+            "key": "user3_id",
+            "value": ""
+        },
+        {
+            "key": "film1_id",
+            "value": ""
+        },
+        {
+            "key": "film2_id",
+            "value": ""
+        },
+        {
+            "key": "film3_id",
+            "value": ""
+        },
+        {
+            "key": "film_id",
+            "value": ""
         },
         {
             "key": "user",
