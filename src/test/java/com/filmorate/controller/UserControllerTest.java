@@ -3,6 +3,7 @@ package com.filmorate.controller;
 import com.filmorate.exception.NotFoundException;
 import com.filmorate.exception.ValidationException;
 import com.filmorate.model.User;
+import com.filmorate.service.UserService;
 import com.filmorate.storage.user.InMemoryUserStorage;
 import com.filmorate.storage.user.UserStorage;
 import org.junit.jupiter.api.Test;
@@ -13,9 +14,10 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class UserControllerTest {
+class UserControllerTest {
     private UserStorage userStorage = new InMemoryUserStorage();
-    private UserController controller = new UserController(userStorage);
+    private UserService userService = new UserService(userStorage);
+    private UserController controller = new UserController(userService);
 
     private User validUser() {
         User user = new User();
